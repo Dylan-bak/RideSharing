@@ -17,20 +17,5 @@ namespace RideSharingInterview.Models
       Driver = driver;
       Console.WriteLine($"Trip assigned to driver {driver.Name}.");
     }
-
-    public void CompleteTrip()
-    {
-      if (Driver != null)
-      {
-        Console.WriteLine($"Trip completed by driver {Driver.Name} for rider {Rider.Name}.");
-        Driver.CompleteRide();
-      }
-      else
-      {
-        Console.WriteLine("No driver assigned for this trip.");
-      }
-
-    }
-
   }
 }

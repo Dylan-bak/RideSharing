@@ -8,11 +8,5 @@ namespace RideSharingInterview.Models
     {
       CurrentLocation = currentLocation;
     }
-
-    public string RequestRide(string destination)
-    {
-      Console.WriteLine($"{Name} is requesting a ride to {destination}.");
-      return destination;
-    }
   }
 }
