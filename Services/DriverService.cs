@@ -1,9 +1,10 @@
 using System;
 using RideSharingInterview.Models;
+using RideSharingInterview.Interfaces;
 
 namespace RideSharingInterview.Services
 {
-  public class DriverService
+  public class DriverService : IDriverService
   {
     public void AcceptRide(Driver driver, Trip trip)
     {

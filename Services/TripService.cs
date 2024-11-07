@@ -1,9 +1,10 @@
 using System;
+using RideSharingInterview.Interfaces;
 using RideSharingInterview.Models;
 
 namespace RideSharingInterview.Services
 {
-  public class TripService
+  public class TripService : ITripService
   {
 
     public void CompleteTrip(Trip trip)

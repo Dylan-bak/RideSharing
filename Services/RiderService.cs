@@ -1,9 +1,10 @@
 using System;
+using RideSharingInterview.Interfaces;
 using RideSharingInterview.Models;
 
 namespace RideSharingInterview.Services
 {
-  public class RiderService
+  public class RiderService : IRiderService
   {
     public string RequestRide(Rider rider, string destination)
     {
