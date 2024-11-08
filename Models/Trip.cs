@@ -4,7 +4,7 @@ namespace RideSharingInterview.Models
   {
     public Rider Rider { get; set; }
     public string Destination { get; set; }
-    public Driver Driver { get; private set; }
+    public Driver? Driver { get; private set; }
 
     public Trip(Rider rider, string destination)
     {
