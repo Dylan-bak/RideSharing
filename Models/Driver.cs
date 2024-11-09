@@ -6,7 +6,7 @@ namespace RideSharingInterview.Models
     public string Location { get; set; }
     public bool Available { get; set; } = true;
 
-    public Driver(string name, int userId, string carModel, string location) : base(name, userId)
+    public Driver(string name, int userId, string carModel, string location, Coordinates coordinates) : base(name, userId, coordinates)
     {
       CarModel = carModel;
       Location = location;

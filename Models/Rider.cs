@@ -4,7 +4,7 @@ namespace RideSharingInterview.Models
   {
     public string CurrentLocation { get; set; }
 
-    public Rider(string name, int userId, string currentLocation) : base(name, userId)
+    public Rider(string name, int userId, string currentLocation, Coordinates coordinates) : base(name, userId, coordinates)
     {
       CurrentLocation = currentLocation;
     }
