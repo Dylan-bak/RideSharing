@@ -6,29 +6,29 @@ namespace RideSharingInterview.Services
 {
   public class TripService : ITripService
   {
-    private readonly IDriverService driverService;
-    private readonly IDriverMatchingService driverMatchingService;
-    private readonly INotificationService notificationService;
+    private readonly IDriverService DriverService;
+    private readonly IDriverMatchingService DriverMatchingService;
+    private readonly INotificationService NotificationService;
 
 
     public TripService(IDriverService driverService, IDriverMatchingService driverMatchingService, INotificationService notificationService)
     {
-      this.driverService = driverService;
-      this.driverMatchingService = driverMatchingService;
-      this.notificationService = notificationService;
+      DriverService = driverService;
+      DriverMatchingService = driverMatchingService;
+      NotificationService = notificationService;
     }
 
     public void OpenTrip(Trip trip, Driver[] drivers)
     {
-      Driver? driver = this.driverMatchingService.FindClosestDriver(trip.Rider, drivers);
+      Driver? driver = DriverMatchingService.FindClosestDriver(trip.Rider, drivers);
       if (driver != null)
       {
-        this.driverService.AcceptRide(driver, trip);
-        this.notificationService.NotifyUser($"Driver '{driver.Name}' is most closest. '{driver.Name}' gonna pick you up.");
+        DriverService.AcceptRide(driver, trip);
+        NotificationService.NotifyUser($"Driver '{driver.Name}' is most closest. '{driver.Name}' gonna pick you up.");
       }
       else
       {
-        this.notificationService.NotifyUser("No Driver available at the moment.");
+        NotificationService.NotifyUser("No Driver available at the moment.");
       }
     }
 
@@ -37,7 +37,7 @@ namespace RideSharingInterview.Services
       if (trip.Driver != null)
       {
         Console.WriteLine($"Trip completed by driver {trip.Driver.Name} for rider {trip.Rider.Name}.");
-        this.driverService.CompleteRide(trip.Driver);
+        DriverService.CompleteRide(trip.Driver);
       }
       else
       {
