@@ -18,19 +18,17 @@ namespace RideSharingInterview.Services
       this.notificationService = notificationService;
     }
 
-    public Driver? OpenTrip(Trip trip, Driver[] drivers)
+    public void OpenTrip(Trip trip, Driver[] drivers)
     {
       Driver? driver = this.driverMatchingService.FindClosestDriver(trip.Rider, drivers);
       if (driver != null)
       {
-        // this.driverService.AcceptRide(trip.Driver, trip);
+        this.driverService.AcceptRide(driver, trip);
         this.notificationService.NotifyUser($"Driver '{driver.Name}' is most closest. '{driver.Name}' gonna pick you up.");
-        return driver;
       }
       else
       {
         this.notificationService.NotifyUser("No Driver available at the moment.");
-        return null;
       }
     }
 

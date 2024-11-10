@@ -21,20 +21,11 @@ namespace RideSharingInterview
         new StandardDriver("Maurice", 2, "Aston Martin Valkyrie", "Madagascar", new Coordinates(47.50, 18.87)),
         new PremiumDriver("Steven", 3, "SM5", "Singapore", new Coordinates(103.81, 1.35))
       };
-
-      string destination = riderService.RequestRide(rider, "South Pole");
-      Trip trip = new Trip(rider, destination);
-      Driver? closetDriver = tripService.OpenTrip(trip, drivers);
-      if (closetDriver == null) throw new InvalidOperationException("No Driver available at the moment.");
-      driverService.AcceptRide(closetDriver, trip);
-      tripService.CompleteTrip(trip);
-
-      /* 
+      
       string destination = riderService.RequestRide(rider, "South Pole");
       Trip trip = new Trip(rider, destination);
       tripService.OpenTrip(trip, drivers);
       tripService.CompleteTrip(trip);
-      */ 
     }
   }
 }
