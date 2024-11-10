@@ -7,7 +7,7 @@ namespace RideSharingInterview.Services
   {
     public void NotifyUser(string message)
     {
-      throw new NotImplementedException();
+      Console.WriteLine($"Notification: {message}");
     }
   }
 }

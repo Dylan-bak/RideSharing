@@ -4,6 +4,6 @@ namespace RideSharingInterview.Interfaces
 {
   public interface IDriverMatchingService
   {
-    Driver FindClosestDriver(Rider rider);
+    Driver? FindClosestDriver(Rider rider, Driver[] drivers);
   }
 }
